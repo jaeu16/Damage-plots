@@ -70,6 +70,8 @@ densityPlotScatter([Sa'; local_N_DL'], 'Sa $[m/s^2]$', '$DL_i$', 'Local damages,
 saveas(gcf,'rigid\results from scatter density\Local damages, north fecade.jpg')
 densityPlotScatter([Sa'; local_S_DL'], 'Sa $[m/s^2]$', '$DL_i$', 'Local damages, south fecade')
 saveas(gcf,'rigid\results from scatter density\Local damages, south fecade.jpg')
+densityPlotScatter([Sa'; maxLocal], 'Sa $[m/s^2]$', '$DL_i$', 'Max local damages')
+saveas(gcf,'rigid\results from scatter density\Max local damages.jpg')
 
 % Macro scale
 densityPlotScatter([Sa'; macro_E_DL'], 'Sa $[m/s^2]$', '$DL_i$', 'Macro damages, east fecade')
@@ -80,6 +82,8 @@ densityPlotScatter([Sa'; macro_N_DL'], 'Sa $[m/s^2]$', '$DL_i$', 'Macro damages,
 saveas(gcf,'rigid\results from scatter density\Macro damages, north fecade.jpg')
 densityPlotScatter([Sa'; macro_S_DL'], 'Sa $[m/s^2]$', '$DL_i$', 'Macro damages, south fecade')
 saveas(gcf,'rigid\results from scatter density\Macro damages, south fecade.jpg')
+densityPlotScatter([Sa'; maxMacro], 'Sa $[m/s^2]$', '$DL_i$', 'Max macro damages')
+saveas(gcf,'rigid\results from scatter density\Max macro damages.jpg')
 
 % Global scale
 densityPlotScatter([Sa'; global_DL'], 'Sa $[m/s^2]$', '$DL_i$', 'Global damages')
@@ -105,6 +109,7 @@ function graph = densityPlotScatter(X,xLabel,yLabel,graphTitle)
     ylabel(yLabel)
     title(graphTitle)
     grid on
+    colormap(flipud(hot))
     colorbar
 end
 

@@ -38,7 +38,7 @@ function [d, h] = densityScatter(X,param)
 %
 % default values
 
-plotting = 1; filterFactor = 0.3; colMap = flipud(hot); markerSize = 20;
+plotting = 1; filterFactor = 0.3; colMap = hot; markerSize = 20;
 % rewrite default parameters if needed
 if nargin == nargin(mfilename)
   for j = 1:size(param,1), eval([param{j,1},'= param{j,2};']); end
@@ -56,7 +56,7 @@ close(h)
 % normalize density measure
 maxd = max(d); mind = min(d); d = (d-mind)/(maxd-mind);
 if plotting % plotting option
-  T = linspace(1,0,size(colMap,1));
+  T = linspace(0,1,size(colMap,1));
   col = interp1(T, colMap, d);
   if     m == 3
     h = scatter3(X(1,:),X(2,:),X(3,:),markerSize,col,'filled');

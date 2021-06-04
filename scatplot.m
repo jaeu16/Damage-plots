@@ -209,7 +209,7 @@ return
 %~~~~~~~~~~ Graf Scatter Plot ~~~~~~~~~~~
 function varargout = gsp(x,y,c,ms)
 %Graphs scattered poits
-map = colormap;
+map = colormap(flipud(hot));
 ind = fix((c-min(c))/(max(c)-min(c))*(size(map,1)-1))+1;
 h = [];
 %much more efficient than matlab's scatter plot
