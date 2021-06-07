@@ -32,6 +32,7 @@ hlines = 1;
 delim = ',';
 data = textscan(fid,format,'HeaderLines',hlines,'Delimiter',delim,'MultipleDelimsAsOne',1,'TreatAsEmpty','-');
 fclose(fid);
+fund_period = importdata('../modes/Periods.txt');
 
 %% Inputs for plots
 method = 'circles';
